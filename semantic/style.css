@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+.container {
+  margin: 80px auto;
+  width: 90%;
+  max-width: 800px;
+	font-family: 'Source Sans Pro';
+
+}
+
+h1 {
+	  font-family: 'Source Sans Pro';
+    font-size: 2.5rem;
+		margin: 50px auto;
+		width: 100%;
+		max-width: 800px;
+    padding: 15px 20px;
+    background-color: #f68e1e;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+body {
+	padding: 1em;
+}
