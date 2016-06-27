@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/form.css">
+<link rel="stylesheet" type="text/css" href="https://rawgit.com/Semantic-Org/Semantic-UI/next/dist/semantic.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/button.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/reset.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/header.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/dropdown.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/form.js" ></script>
+<script src="script.js" ></script>
+<script src="https://rawgit.com/Semantic-Org/Semantic-UI/next/dist/semantic.js"></script>
+<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<div class="container">
+	<form class="ui form">
+		<h1>Release of Information Request Form</h1>
+
+
+
+        
+		<div class="two fields">
+			<div class="field">
+				<label>First Name</label>
+				<input placeholder="First Name" name="fname" type="text">
+			</div>
+			<div class="field">
+				<label>Last Name</label>
+				<input placeholder="Last Name" name="lname" type="text" </div>
+			</div>
+		</div>
+		<div class="field">
+			<label>Address</label>
+			<input placeholder="Address" name="address" type="text">
+		</div>
+        
+        <div class="three fields">
+        	<div class="field">
+            	<label>City</label>
+                <input placeholder="City" name="city" type="text">
+            </div>
+            <div class="field">
+            	<label>State</label>
+                <input placeholder="State" name="state" type="text">
+            </div>
+            <div class="field">
+            	<label>Zip Code</label>
+                <input placeholder="Zip" name="zip" type="number">
+            </div>
+        </div>
+                
+        
+		<div class="field">
+			<label>Social Security Number</label>
+			<input name="ssn" type="password">
+		</div>
+		<div class="inline field">
+			<div class="ui checkbox">
+				<input name="signature" type="checkbox" tabindex="0" class="hidden">
+				<label>This checkbox serves as my digital signature</label>
+			</div>
+		</div>
+        
+        <div class="field">
+			<label>Date</label>
+			<input placeholder="Date " name="date" type="date">
+		</div>
+		<div class="ui blue submit button">Submit</div>
+		<div class="ui reset button">Reset</div>
+		<div class="ui clear button">Clear</div>
+	</form>
+</div>
+
+</body>
+</html>
