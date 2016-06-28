@@ -13,13 +13,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/form.js" ></script>
 <script src="script.js" ></script>
 <script src="https://rawgit.com/Semantic-Org/Semantic-UI/next/dist/semantic.js"></script>
-<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.23/jquery.form-validator.min.js"></script>
 </head>
 
 <body>
 
 <div class="container">
-	<form class="ui form">
+	<form class="ui form" action="" id="registration-form">
 		<h1>Release of Information Request Form</h1>
 
 
@@ -28,7 +29,7 @@
 		<div class="two fields">
 			<div class="field">
 				<label>First Name</label>
-				<input placeholder="First Name" name="fname" type="text">
+				<input placeholder="First Name" name="fname" type="text" data-validation="length alphanumeric" data-validation-length="2-100" data-validation-error-msg-required="Name must be at least 2 characters long.">
 			</div>
 			<div class="field">
 				<label>Last Name</label>
@@ -76,6 +77,12 @@
 		<div class="ui clear button">Clear</div>
 	</form>
 </div>
+<script type="text/javascript">
+    $(function(){
+      $.validate();
+      });
+</script>
+
 
 </body>
 </html>
