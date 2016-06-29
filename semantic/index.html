@@ -25,8 +25,8 @@
       <h2> Student Information </h2>
       <div class="two fields">
         <div class="field">
-          <label>First Name</label>
-          <input placeholder="First Name" name="fname" type="text" data-validation="length alphanumeric" data-validation-allowing="'" data-validation-length="2-100">
+          <label for="first-name">First Name</label>
+          <input id="first-name" placeholder="First Name" name="fname" type="text" data-validation="length alphanumeric" data-validation-allowing="'" data-validation-length="2-100">
         </div>
         <div class="field">
           <label>Last Name</label>
@@ -35,7 +35,7 @@
       </div>
       <div class="field">
         <label>Sam ID</label>
-        <input placeholder="Sam ID" name="sid" type="number" data-validation="length numeric" data-validation-length="7-9" data-validation-error-msg="Sam ID must be 7-9 numbers in length." data-validation-help="Your SamID begins with 000 and can be found on MySam.">
+        <input placeholder="Sam ID" name="sid" type="text" data-validation="custom" data-validation-regexp="^([0-9]+)$" data-validation-length="7-9" data-validation-error-msg="Sam ID must be 7-9 numbers in length.">
       </div>
       <br />
       <hr />
@@ -44,12 +44,12 @@
         <br />
         <div class="two fields">
           <div class="field">
-            <label>First Name</label>
-            <input placeholder="First Name" name="fname" type="text" data-validation="length alphanumeric" data-validation-allowing="'" data-validation-length="2-100">
+            <label for="first-name-2">First Name</label>
+            <input id="first-name-2" placeholder="First Name" name="fname" type="text" data-validation="length alphanumeric" data-validation-allowing="'" data-validation-length="2-100">
           </div>
           <div class="field">
             <label>Last Name</label>
-            <input placeholder="Last Name" name="lname" type="text" data-validation="length alphanumeric" data-validation-allowing="'-" data-validation-length="2-100" </div>
+            <input placeholder="Last Name" name="lname" type="text" data-validation="length alphanumeric" data-validation-allowing="'-" data-validation-length="2-100">
           </div>
         </div>
         <div class="field">
@@ -121,14 +121,14 @@
           </div>
           <div class="field">
             <label>Zip Code</label>
-            <input placeholder="Zip" name="zip" type="number" data-validation="length numeric" data-validation-length="5" data-validation-error-msg="Must be exactly 5 numbers long.">
+            <input placeholder="Zip" name="zip" type="text" data-validation="custom" data-validation-regexp="^([0-9]+)$" data-validation-length="7-9" data-validation-error-msg="Must be exactly 5 numbers in length.">
           </div>
         </div>
 
         <div class="two fields">
           <div class="field">
             <label>Social Security Number</label>
-            <input name="ssn" type="number" data-validation="length numeric" data-validation-length="9" data-validation-error-msg="Must be exactly 9 numbers long.">
+            <input name="ssn" type="text" data-validation="custom" data-validation-regexp="^([0-9]+)$" data-validation-length="7-9" data-validation-error-msg="Must be exactly 9 numbers in length.">
           </div>
 
           <div class="field">
@@ -222,14 +222,14 @@
           </div>
           <div class="field">
             <label>Zip Code</label>
-            <input placeholder="Zip" name="zip" type="number" data-validation="length numeric" data-validation-length="5" data-validation-error-msg="Must be exactly 5 numbers long.">
+            <input placeholder="Zip" name="zip" type="text" data-validation="custom" data-validation-regexp="^([0-9]+)$" data-validation-length="7-9" data-validation-error-msg="Must be exactly 5 numbers in length.">
           </div>
         </div>
 
         <div class="two fields">
           <div class="field">
             <label>Social Security Number</label>
-            <input name="ssn" type="number" data-validation="length numeric" data-validation-length="9" data-validation-error-msg="Must be exactly 9 numbers long.">
+            <input name="ssn" type="text" data-validation="custom" data-validation-regexp="^([0-9]+)$" data-validation-length="7-9" data-validation-error-msg="Must be exactly 9 numbers in length.">
           </div>
 
           <div class="field">
@@ -240,7 +240,7 @@
       </div>
 
       <br />
-      <button class="ui primary basic button" id="add"><i class="icon plus"></i>Add Another</button>
+      <button type="button" class="ui primary basic button" id="add"><i class="icon plus"></i>Add Another</button>
       <br />
       <br />
       <div class="field">
