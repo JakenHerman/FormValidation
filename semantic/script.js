@@ -1,13 +1,16 @@
-function validateForm(){
-	$('.ui.form')
-	  .form({
-		fields: {
-		  fname	: ['empty', 'minCount[2]'],
-		  lname	: ['empty', 'minCount[2]']
-		}
-	  });
-};
+$(function() {
+  $(".add-trustee").hide();
+  $.validate();
 
-$( ".ui blue submit button" ).click(function() {
-	validateForm();
+  $("#add").click(function() {
+    $(".add-trustee").show();
+    $("#add").hide();
+  });
+
+});
+
+$("#reset").click(function() {
+  $('.container form').get(0).reset();
+  $(".add-trustee").hide();
+  $("#add").show();
 });
