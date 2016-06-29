@@ -1,88 +1,254 @@
-<!doctype html>
-<html>
 <head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/form.css">
-<link rel="stylesheet" type="text/css" href="https://rawgit.com/Semantic-Org/Semantic-UI/next/dist/semantic.css">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/button.css">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/reset.css">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/header.css">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/dropdown.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/form.js" ></script>
-<script src="script.js" ></script>
-<script src="https://rawgit.com/Semantic-Org/Semantic-UI/next/dist/semantic.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.23/jquery.form-validator.min.js"></script>
+  <meta charset="utf-8">
+  <title>Form Validation</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/form.css">
+  <link rel="stylesheet" type="text/css" href="https://rawgit.com/Semantic-Org/Semantic-UI/next/dist/semantic.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/button.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/header.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/dropdown.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/components/form.js"></script>
+  <script src="script.js"></script>
+  <script src="https://rawgit.com/Semantic-Org/Semantic-UI/next/dist/semantic.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.23/jquery.form-validator.min.js"></script>
 </head>
 
 <body>
 
-<div class="container">
-	<form class="ui form" action="" id="registration-form">
-		<h1>Release of Information Request Form</h1>
+  <div class="container">
+    <form class="ui form" action="" id="registration-form">
+      <h1>Release of Information Request Form</h1>
 
-
-
-        
-		<div class="two fields">
-			<div class="field">
-				<label>First Name</label>
-				<input placeholder="First Name" name="fname" type="text" data-validation="length alphanumeric" data-validation-length="2-100" data-validation-error-msg-required="Name must be at least 2 characters long.">
-			</div>
-			<div class="field">
-				<label>Last Name</label>
-				<input placeholder="Last Name" name="lname" type="text" </div>
-			</div>
-		</div>
-		<div class="field">
-			<label>Address</label>
-			<input placeholder="Address" name="address" type="text">
-		</div>
-        
-        <div class="three fields">
-        	<div class="field">
-            	<label>City</label>
-                <input placeholder="City" name="city" type="text">
-            </div>
-            <div class="field">
-            	<label>State</label>
-                <input placeholder="State" name="state" type="text">
-            </div>
-            <div class="field">
-            	<label>Zip Code</label>
-                <input placeholder="Zip" name="zip" type="number">
-            </div>
-        </div>
-                
-        
-		<div class="field">
-			<label>Social Security Number</label>
-			<input name="ssn" type="password">
-		</div>
-		<div class="inline field">
-			<div class="ui checkbox">
-				<input name="signature" type="checkbox" tabindex="0" class="hidden">
-				<label>This checkbox serves as my digital signature</label>
-			</div>
-		</div>
-        
+      <br />
+      <h2> Student Information </h2>
+      <div class="two fields">
         <div class="field">
-			<label>Date</label>
-			<input placeholder="Date " name="date" type="date">
-		</div>
-		<div class="ui blue submit button">Submit</div>
-		<div class="ui reset button">Reset</div>
-		<div class="ui clear button">Clear</div>
-	</form>
-</div>
-<script type="text/javascript">
-    $(function(){
-      $.validate();
-      });
-</script>
+          <label>First Name</label>
+          <input placeholder="First Name" name="fname" type="text" data-validation="length alphanumeric" data-validation-allowing="'" data-validation-length="2-100">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input placeholder="Last Name" name="lname" type="text" data-validation="length alphanumeric" data-validation-allowing="'-" data-validation-length="2-100" </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Sam ID</label>
+        <input placeholder="Sam ID" name="sid" type="number" data-validation="length numeric" data-validation-length="7-9" data-validation-error-msg="Sam ID must be 7-9 numbers in length." data-validation-help="Your SamID begins with 000 and can be found on MySam.">
+      </div>
+      <br />
+      <hr />
+      <div class="trustee">
+        <h4>I grant Sam Houston State representatives permission to speak to the individual(s) named below on my behalf.</h4>
+        <br />
+        <div class="two fields">
+          <div class="field">
+            <label>First Name</label>
+            <input placeholder="First Name" name="fname" type="text" data-validation="length alphanumeric" data-validation-allowing="'" data-validation-length="2-100">
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input placeholder="Last Name" name="lname" type="text" data-validation="length alphanumeric" data-validation-allowing="'-" data-validation-length="2-100" </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Address</label>
+          <input placeholder="Address" name="address" type="text" data-validation="length" data-validation-length="5-100">
+        </div>
 
+        <div class="three fields">
+          <div class="field">
+            <label>City</label>
+            <input placeholder="City" name="city" type="text" data-validation="custom" data-validation-regexp="^([a-zA-Z]+)$" data-validation-allowing="'-" data-validation-length="1-100" data-validation-error-msg="City name must be between 1-100 alphabetic characters only with the exception of the characters ' and -">
+          </div>
+          <div class="field">
+            <label>State</label>
+            <select class="ui search dropdown" data-validation="">
+                  <option value="">State</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+          </div>
+          <div class="field">
+            <label>Zip Code</label>
+            <input placeholder="Zip" name="zip" type="number" data-validation="length numeric" data-validation-length="5" data-validation-error-msg="Must be exactly 5 numbers long.">
+          </div>
+        </div>
 
+        <div class="two fields">
+          <div class="field">
+            <label>Social Security Number</label>
+            <input name="ssn" type="number" data-validation="length numeric" data-validation-length="9" data-validation-error-msg="Must be exactly 9 numbers long.">
+          </div>
+
+          <div class="field">
+            <label>Relationship to Student</label>
+            <input name="relationship" type="text" data-validation="length alphanumeric" data-validation-allowing=" " data-validation-length="1-250" data-validation-error-msg="Relationship to student must not be empty.">
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <hr />
+
+      <div class="add-trustee">
+        <br />
+        <div class="two fields">
+          <div class="field">
+            <label>First Name</label>
+            <input placeholder="First Name" name="fname" type="text" data-validation="length alphanumeric" data-validation-allowing="'" data-validation-length="2-100">
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input placeholder="Last Name" name="lname" type="text" data-validation="length alphanumeric" data-validation-allowing="'-" data-validation-length="2-100" </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Address</label>
+          <input placeholder="Address" name="address" type="text" data-validation="length" data-validation-length="5-100">
+        </div>
+
+        <div class="three fields">
+          <div class="field">
+            <label>City</label>
+            <input placeholder="City" name="city" type="text" data-validation="custom" data-validation-regexp="^([a-zA-Z]+)$" data-validation-allowing="'-" data-validation-length="1-100" data-validation-error-msg="City name must be between 1-100 alphabetic characters only with the exception of the characters ' and -">
+          </div>
+          <div class="field">
+            <label>State</label>
+            <select class="ui search dropdown" data-validation="">
+                  <option value="">State</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+          </div>
+          <div class="field">
+            <label>Zip Code</label>
+            <input placeholder="Zip" name="zip" type="number" data-validation="length numeric" data-validation-length="5" data-validation-error-msg="Must be exactly 5 numbers long.">
+          </div>
+        </div>
+
+        <div class="two fields">
+          <div class="field">
+            <label>Social Security Number</label>
+            <input name="ssn" type="number" data-validation="length numeric" data-validation-length="9" data-validation-error-msg="Must be exactly 9 numbers long.">
+          </div>
+
+          <div class="field">
+            <label>Relationship to Student</label>
+            <input name="relationship" type="text" data-validation="length alphanumeric" data-validation-length="1-250" data-validation-error-msg="Relationship to student must not be empty.">
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <button class="ui primary basic button" id="add"><i class="icon plus"></i>Add Another</button>
+      <br />
+      <br />
+      <div class="field">
+        <label>Date</label>
+        <input placeholder="Date " name="date" type="date">
+      </div>
+      <div class="ui blue submit button">Submit</div>
+      <div class="ui reset button" id="reset">Clear</div>
+    </form>
+  </div>
 </body>
-</html>
