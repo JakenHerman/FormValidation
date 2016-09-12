@@ -109,3 +109,57 @@ Once you've created this object, in the `validate` function (next section), set 
 
 Begin Validation
 -
+
+To start validation, in jQuery, use `$.validate();`. That is all that is necessary. You can also run this method on submit as well to double-check your validation. If you have two forms on one page, you can specify which form to validate by calling it's id, as displayed below:
+
+    $.validate({
+        form : '#form-id'
+    });
+    
+Additional configuration options are available in the form validator documentation.
+
+------------------------
+
+Common Fields to Copy/Paste
+=
+
+*First Name*
+
+    <div class="field"> <label for="first-name">First Name</label> <input id="first-na me" placeholder="John" name="fname" type="text" data-validation="length alphanumeric" data-validation-allowing="'" data-validation-length="2-100" /> </div> 
+
+*Last Name*
+
+    <div class="field"> <label for="last-name">Last Name</label> <input id="last-name" placeholder="Last Name" name="lname" type="text" data-validation="length alphanumeric" data-validation-allowing="'-" data-validation-length="2-100" /> </div> 
+
+*Sam ID*
+
+    <div class="field"> <label for="sam-id">Sam ID</label> <input placeholder="0001234 56" name="sid" id="sam-id" type="text" data-validation="length custom" data-valida tion-regexp="^([0-9]+)$" data-validation-length="9" data-validation-error-msg="Sam ID must be 9 numbers in length." data-validation-help="Your Sam ID typically begins with 000 and can be found on MySam.Shsu.edu "> </div> 
+
+*Address*
+
+    <div class="field"> <label for="address">Address</label> <input id="address" place holder="Address" name="address" type="text" data-validation="length" data-validation-length="5-100"> </div> 
+
+*City*
+
+    <div class="field"> <label for="city">City</label> <input id="city" placeholder="C ity" name="city" type="text" data-validation="custom" data-validation-regexp="^([a -zA-Z]+)$" data-validation-allowing="'-" data-validation-length="1-100" data-valid ation-error-msg="City name must be between 1-100 alphabetic characters only with the exception of the characters ' and -"> </div> 
+
+*State*
+
+    <div class="field"> <label for="state">State</label> <select id="state" class="ui search dropdown" data-validation="required"> <option value="">State</option> <option value="AL">Alabama</option> <option value="AK">Alaska</option> <option value="AZ">Arizona</option> <option value="AR">Arkansas</option> <option value="CA">California</op tion> <option value="CO">Colorado</option> <option value="CT">Connecticut</option> <option value="DE">Delaware</option> <option value="DC">District Of Columbia</opti on> <option value="FL">Florida</option> <option value="GA">Georgia</option> <optio n value="HI">Hawaii</option> <option value="ID">Idaho</option> <option value="IL"> Illinois</option> <option value="IN">Indiana</option> <option value="IA">Iowa</opt ion> <option value="KS">Kansas</option> <option value="KY">Kentucky</option> <opti on value="LA">Louisiana</option> <option value="ME">Maine</option> <option value="MD">Maryland</option> <option value="MA">Massachusetts</option> <option value="MI">Michigan</option> <option value="MN">Minnesota</option> <option value="MS">Missis sippi</option> <option value="MO">Missouri</option> <option value="MT">Montana</op tion> <option value="NE">Nebraska</option> <option value="NV">Nevada</option> <opt ion value="NH">New Hampshire</option> <option value="NJ">New Jersey</option> <opti on value="NM">New Mexico</option> <option value="NY">New York</option> <option val ue="NC">North Carolina</option> <option value="ND">North Dakota</option> <option v alue="OH">Ohio</option> <option value="OK">Oklahoma</option> <option value="OR">Or egon</option> <option value="PA">Pennsylvania</option> <option value="RI">Rhode Is land</option> <option value="SC">South Carolina</option> <option value="SD">South Dakota</option> <option value="TN">Tennessee</option> <option value="TX">Texas</op tion> <option value="UT">Utah</option> <option value="VT">Vermont</option> <option value="VA">Virginia</option> <option value="WA">Washington</option> <option value= "WV">West Virginia</option> <option value="WI">Wisconsin</option> <option value="WY">Wyoming</option> </select> </div> 
+
+*Zip Code*
+
+    <div class="field"> <label for="zip-code">Zip Code</label> <input placeholder="Zip Code" name="zip-code" id="zip-code" type="text" data-validation="length custom" da ta-validation-regexp="^([0-9]+)$" data-validation-length="7-9" data-validation-error-msg="Must be exactly 5 numbers in length."> </div> 
+
+*Social Security Number*
+
+    <div class="field"> <label for="social-security-number">Social Security Number</la bel> <input name="ssn" id="social-security-number" type="text" data-validation="le ngth custom" data-validation-regexp="^([0-9]+)$" data-validation-length="9" data-v alidation-error-msg="Must be exactly 9 numbers in length."> </div> 
+
+*Date*
+
+    <div class="field"> <label for="date">Date</label> <input placeholder="Date " id="date" name="date" type="date" data-validation="date"> </div> 
+
+*Phone*
+
+    <div class="field"> <label for="phone-num">Phone</label> <input placeholder="(555) -555-5555" id="phone-num" name="phone-num" type="tel" data-validation="length cust om" data-validation-regexp="^([0-9]+)$" data-validation-length="10" data-validation-error-msg="Must be exactly 10 numbers in length."/> </div> 
+
