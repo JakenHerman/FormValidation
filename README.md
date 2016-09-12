@@ -118,6 +118,31 @@ To start validation, in jQuery, use `$.validate();`. That is all that is necessa
     
 Additional configuration options are available in the form validator documentation.
 
+Dependent Validation
+-
+
+If an input field is only required if another is filled out, it is possible to just to dependent validation. To do this, you use the `data-validation-depends-on` attribute for that input. For example, below, you only need to input an email if the "Contact Me" checkbox is selected:
+
+    <p>
+      <strong>Contact me:</strong>
+      <input name="do-contact" value="1" type="checkbox">
+    </p>
+    <p>
+      <strong>E-mail:</strong>
+      <input data-validation="email" data-validation-depends-on="do-contact" type="text">
+    </p>
+
+For inputs that are not text inputs, sometimes the dependent validation doesn't work. For example, a photo upload input does not work this way for some reason. A small workaround for this is to implement a replace function if the checkbox is checked in jQuery.
+
+On your `submit.click` function, you can add the following:
+
+      if ($('#checkbox-id').is(':checked')){
+            $('#div-container-id').html('<label for="file_upload">Photo</label><input type="file" '
+            + 'id="file_upload" name="file_upload" />');
+      }
+      
+Which will replace the existing input that requires a photo with one that no longer requires it.
+
 ------------------------
 
 Common Fields to Copy/Paste
